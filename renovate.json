@@ -4,7 +4,6 @@
     "github>mason-org/registry-renovate-config",
     "config:recommended",
     ":semanticCommits",
-    ":automergeBranch",
     ":automerge",
     ":skipStatusChecks",
     ":timezone(Asia/Ho_Chi_Minh)",
