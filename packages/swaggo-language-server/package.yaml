@@ -1,0 +1,20 @@
+---
+# yaml-language-server: $schema=https://github.com/mason-org/registry-schema/releases/latest/download/package.schema.json
+name: swaggo_ls
+description: Swaggo for IDE
+homepage: https://github.com/takaaa220/swaggo-ide
+licenses:
+  - proprietary
+languages:
+  - go
+categories:
+  - LSP
+
+source:
+  id: pkg:golang/github.com/takaaa220/swaggo-ide/swaggo-language-server@swaggo-language-server-v0.0.3
+
+bin:
+  swaggo-language-server: golang:swaggo-language-server
+
+neovim:
+  lspconfig: swaggo_ls
