@@ -11,7 +11,7 @@ categories:
   - Formatter
 
 source:
-  id: pkg:github/cmhughes/latexindent.pl@V3.24.6
+  id: pkg:github/cmhughes/latexindent.pl@V3.24.7
   asset:
     - target:
         - darwin_x64
