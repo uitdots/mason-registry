@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://github.com/mason-org/registry-schema/releases/latest/download/package.schema.json
-name: redocly
+name: redocly-language-server
 description: Redocly VS Code extension
 homepage: https://github.com/Redocly/redocly-vs-code
 licenses:
