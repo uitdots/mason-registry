@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - shell: bash
-        run: npx -y -p renovate -c renovate-config-validator \
-          | tee /dev/stderr \
-          | grep -Evz '(ERROR|could not be parsed)'
+        run: |
+          set +o pipefail
+          npx -y -p renovate -c renovate-config-validator \
+            | tee /dev/stderr \
+            | grep -Evz '(ERROR|could not be parsed)'
