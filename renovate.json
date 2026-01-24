@@ -53,7 +53,7 @@
       "defaultRegistryUrlTemplate": "https://open-vsx.org/api/{{{packageName}}}",
       "format": "json",
       "transformTemplates": [
-        "{ \"releases\": $keys(allVersions)[$ != 'latest'] # $v . { \"version\": $v } }"
+        "{ \"releases\": $keys(allVersions)[$ != 'latest'] # $v . { \"version\": $string($v) } }"
       ]
     }
   }
