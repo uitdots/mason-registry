@@ -11,20 +11,32 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
       "automerge": true
     },
     {
       "description": "Fix Maven package lookup for JUnit by replacing slash with colon",
-      "matchFiles": ["packages/junit/package.yaml"],
-      "matchDatasources": ["maven"],
-      "packageName": "org.junit.platform:junit-platform-console-standalone"
+      "matchFileNames": [
+        "packages/junit/package.yaml"
+      ],
+      "matchDatasources": [
+        "maven"
+      ],
+      "matchPackageNames": [
+        "org.junit.platform:junit-platform-console-standalone"
+      ]
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/package\\.yaml$/"],
+      "managerFilePatterns": [
+        "/package\\.yaml$/"
+      ],
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "\nname: (?<depName>.+)",
@@ -37,7 +49,9 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": ["/package\\.yaml$/"],
+      "managerFilePatterns": [
+        "/package\\.yaml$/"
+      ],
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "\nname: (?<depName>.+)",
