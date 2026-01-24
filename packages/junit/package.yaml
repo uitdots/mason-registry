@@ -12,7 +12,7 @@ categories:
 
 source:
   # renovate:datasource=maven
-  id: pkg:generic/org.junit.platform/junit-platform-console-standalone@6.0.1
+  id: pkg:generic/org.junit.platform:junit-platform-console-standalone@6.0.1
   download:
     files:
       junit-platform-console-standalone.jar: https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/{{version}}/junit-platform-console-standalone-{{version}}.jar

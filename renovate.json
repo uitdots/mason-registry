@@ -11,47 +11,46 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": true
+    },
+    {
+      "description": "Fix Maven package lookup for JUnit by replacing slash with colon",
+      "matchFiles": ["packages/junit/package.yaml"],
+      "matchDatasources": ["maven"],
+      "packageName": "org.junit.platform:junit-platform-console-standalone"
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/package\\.yaml$/"
-      ],
+      "managerFilePatterns": ["/package\\.yaml$/"],
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "\nname: (?<depName>.+)",
-        "\n  id:\\s+pkg:generic\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)",
-        "# renovate:.*versioning=(?<versioning>[^,\n]+)",
-        "# renovate:.*datasource=maven"
+        "\n  id:\\s+pkg:openvsx\\/(?<packageName>[^\\/]+\\/[^@]+)@(?<currentValue>[^\\s\\?#]+)",
+        "# renovate:.*datasource=(?<datasource>[^,\n]+)",
+        "# renovate:.*versioning=(?<versioning>[^,\n]+)"
       ],
-      "datasourceTemplate": "{{{datasource}}}",
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-      "packageNameTemplate": "{{{replace '/' ':' packageName}}}",
-      "currentValueTemplate": "{{{decodeURIComponent currentValue}}}"
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}custom.openvsx{{/if}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/package\\.yaml$/"
-      ],
+      "managerFilePatterns": ["/package\\.yaml$/"],
+      "matchStringsStrategy": "combination",
       "matchStrings": [
-        "id:\\s*pkg:openvsx/(?<packageName>[^@]+)@(?<currentValue>[^\\s\\n]+)"
+        "\nname: (?<depName>.+)",
+        "\n  id:\\s+pkg:golang\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)",
+        "# renovate:.*versioning=(?<versioning>[^,\n]+)"
       ],
-      "datasourceTemplate": "custom.openvsx",
-      "depNameTemplate": "{{{packageName}}}"
+      "datasourceTemplate": "go",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ],
   "customDatasources": {
     "openvsx": {
-      "defaultRegistryUrlTemplate": "https://open-vsx.org/api/{{{replace '.' '/' packageName}}}",
+      "defaultRegistryUrlTemplate": "https://open-vsx.org/api/{{{packageName}}}",
       "format": "json",
       "transformTemplates": [
         "{ \"releases\": $keys(allVersions)[$ != 'latest'] # $v . { \"version\": $v } }"
