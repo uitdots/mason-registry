@@ -5,9 +5,14 @@
     "config:recommended",
     ":semanticCommits",
     ":automergeBranch",
-    ":automerge",
     ":skipStatusChecks",
     ":timezone(Asia/Ho_Chi_Minh)",
     ":disableRateLimiting"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "automerge": true
+    }
   ]
 }
