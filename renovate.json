@@ -11,13 +11,20 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": "package\\.yaml$",
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/package\\.yaml$/"
+      ],
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "\nname: (?<depName>.+)",
@@ -31,7 +38,10 @@
       "currentValueTemplate": "{{{decodeURIComponent currentValue}}}"
     },
     {
-      "fileMatch": "package\\.yaml$",
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/package\\.yaml$/"
+      ],
       "matchStrings": [
         "id:\\s*pkg:openvsx/(?<packageName>[^@]+)@(?<currentValue>[^\\s\\n]+)"
       ],
