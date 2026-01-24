@@ -29,6 +29,23 @@
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "packageNameTemplate": "{{{replace '/' ':' packageName}}}",
       "currentValueTemplate": "{{{decodeURIComponent currentValue}}}"
+    },
+    {
+      "fileMatch": "package\\.yaml$",
+      "matchStrings": [
+        "id:\\s*pkg:openvsx/(?<packageName>[^@]+)@(?<currentValue>[^\\s\\n]+)"
+      ],
+      "datasourceTemplate": "custom.openvsx",
+      "depNameTemplate": "{{{packageName}}}"
     }
-  ]
+  ],
+  "customDatasources": {
+    "openvsx": {
+      "defaultRegistryUrlTemplate": "https://open-vsx.org/api/{{{replace '.' '/' packageName}}}",
+      "format": "json",
+      "transformTemplates": [
+        "{ \"releases\": $keys(allVersions)[$ != 'latest'] # $v . { \"version\": $v } }"
+      ]
+    }
+  }
 }
