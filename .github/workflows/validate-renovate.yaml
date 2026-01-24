@@ -1,0 +1,24 @@
+---
+name: Validate Renovate config
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - renovate.json
+  pull_request:
+    paths:
+      - renovate.json
+
+jobs:
+  validate:
+    name: Validate renovate config
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - shell: bash
+        run: npx -y -p renovate -c renovate-config-validator \
+          | tee /dev/stderr \
+          | grep -Evz '(ERROR|could not be parsed)'
