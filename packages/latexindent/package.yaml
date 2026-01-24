@@ -11,6 +11,7 @@ categories:
   - Formatter
 
 source:
+  # renovate:versioning=regex:^V?(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
   id: pkg:github/cmhughes/latexindent.pl@V3.24.7
   asset:
     - target:

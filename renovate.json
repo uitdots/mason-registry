@@ -14,5 +14,21 @@
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": true
     }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": "package\\.yaml$",
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "\nname: (?<depName>.+)",
+        "\n  id:\\s+pkg:generic\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)",
+        "# renovate:.*versioning=(?<versioning>[^,\n]+)",
+        "# renovate:.*datasource=maven"
+      ],
+      "datasourceTemplate": "{{{datasource}}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "packageNameTemplate": "{{{replace '/' ':' packageName}}}",
+      "currentValueTemplate": "{{{decodeURIComponent currentValue}}}"
+    }
   ]
 }
