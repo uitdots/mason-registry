@@ -17,16 +17,21 @@ source:
   id: pkg:generic/ariga:atlas@1.1.0
   download:
     - target: win_x64
-      file: https://release.ariga.io/atlas/atlas-community-windows-amd64-v{{version}}.exe
+      files:
+        atlas: https://release.ariga.io/atlas/atlas-community-windows-amd64-v{{version}}.exe
       ext: .exe
     - target: linux_x64
-      file: https://release.ariga.io/atlas/atlas-community-linux-amd64-v{{version}}
+      files:
+        atlas: https://release.ariga.io/atlas/atlas-community-linux-amd64-v{{version}}
     - target: linux_arm64
-      file: https://release.ariga.io/atlas/atlas-community-linux-arm64-v{{version}}
+      files:
+        atlas: https://release.ariga.io/atlas/atlas-community-linux-arm64-v{{version}}
     - target: darwin_x64
-      file: https://release.ariga.io/atlas/atlas-community-darwin-amd64-v{{version}}
+      files:
+        atlas: https://release.ariga.io/atlas/atlas-community-darwin-amd64-v{{version}}
     - target: darwin_arm64
-      file: https://release.ariga.io/atlas/atlas-community-darwin-arm64-v{{version}}
+      files:
+        atlas: https://release.ariga.io/atlas/atlas-community-darwin-arm64-v{{version}}
 
 bin:
   atlas: atlas{{source.download.ext}}
