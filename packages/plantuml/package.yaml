@@ -1,0 +1,21 @@
+---
+# yaml-language-server: $schema=https://github.com/mason-org/registry-schema/releases/latest/download/package.schema.json
+name: plantuml
+description: Generate diagrams from textual description
+homepage: https://github.com/plantuml/plantuml
+licenses:
+  - GPL-3.0
+  - LGPL-3.0
+  - proprietary
+languages:
+  - plantuml
+categories:
+  - Runtime
+
+source:
+  id: pkg:github/plantuml/plantuml@v1.2026.2
+  asset:
+    file: plantuml.jar
+
+share:
+  plantuml.jar: plantuml.jar
