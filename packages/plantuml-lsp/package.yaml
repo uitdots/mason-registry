@@ -1,0 +1,20 @@
+---
+# yaml-language-server: $schema=https://github.com/mason-org/registry-schema/releases/latest/download/package.schema.json
+name: openapi-language-server
+description: Language Server for PlantUML
+homepage: https://github.com/ptdewey/plantuml-lsp
+licenses:
+  - MIT
+languages:
+  - plantuml
+categories:
+  - LSP
+
+source:
+  id: pkg:golang/github.com/ptdewey/plantuml-lsp@v0.5.3
+
+bin:
+  plantuml-lsp: plantuml-lsp
+
+neovim:
+  lspconfig: plantuml_lsp
