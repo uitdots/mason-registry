@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://github.com/mason-org/registry-schema/releases/latest/download/package.schema.json
-name: openapi-language-server
+name: plantuml-lsp
 description: Language Server for PlantUML
 homepage: https://github.com/ptdewey/plantuml-lsp
 licenses:
