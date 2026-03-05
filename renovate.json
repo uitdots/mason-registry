@@ -21,6 +21,12 @@
       "matchPackageNames": [
         "org.junit.platform:junit-platform-console-standalone"
       ]
+    },
+    {
+      "description": "Fix GitHub package lookup for atlas by replacing colon with slash in owner/repo",
+      "matchDatasources": ["github-releases"],
+      "matchPackageNames": ["ariga:atlas"],
+      "overridePackageName": "ariga/atlas"
     }
   ],
   "customManagers": [
