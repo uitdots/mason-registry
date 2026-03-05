@@ -18,4 +18,4 @@ source:
     file: plantuml.jar
 
 share:
-  plantuml.jar: plantuml.jar
+  plantuml/plantuml.jar: plantuml.jar
