@@ -30,6 +30,19 @@
       "matchStringsStrategy": "combination",
       "matchStrings": [
         "\nname: (?<depName>.+)",
+        "\n  id:\\s+pkg:generic\\/(?<packageName>[^@]+)@(?<currentValue>[^\\s\\?#]+)",
+        "# renovate:.*datasource=(?<datasource>[^,\n]+)",
+        "# renovate:.*versioning=(?<versioning>[^,\n]+)"
+      ],
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/package\\.yaml$/"],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "\nname: (?<depName>.+)",
         "\n  id:\\s+pkg:openvsx\\/(?<packageName>[^\\/]+\\/[^@]+)@(?<currentValue>[^\\s\\?#]+)",
         "# renovate:.*datasource=(?<datasource>[^,\n]+)",
         "# renovate:.*versioning=(?<versioning>[^,\n]+)"
