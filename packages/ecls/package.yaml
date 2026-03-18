@@ -14,4 +14,4 @@ source:
   id: pkg:npm/ecls@0.0.3
 
 bin:
-  ecls: npm:ecls
+  ecls: node_modules/ecls/dist/index.js
