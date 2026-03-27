@@ -14,19 +14,19 @@ source:
   id: pkg:github/KevinNitroG/ecfg@v0.1.1
   asset:
     - target: linux_x64
-      file: ecfg_{{version}}_linux_amd64
+      file: ecfg-lsp_{{version}}_linux_amd64
     - target: linux_arm64
-      file: ecfg_{{version}}_linux_arm64
+      file: ecfg-lsp_{{version}}_linux_arm64
     - target: darwin_x64
-      file: ecfg_{{version}}_darwin_amd64
+      file: ecfg-lsp_{{version}}_darwin_amd64
     - target: darwin_arm64
-      file: ecfg_{{version}}_darwin_arm64
+      file: ecfg-lsp_{{version}}_darwin_arm64
     - target: win_x64
-      file: ecfg_{{version}}_windows_amd64.exe
+      file: ecfg-lsp_{{version}}_windows_amd64.exe
     - target: win_arm64
-      file: ecfg_{{version}}_windows_arm64.exe
+      file: ecfg-lsp_{{version}}_windows_arm64.exe
 bin:
-  ecfg: "{{source.asset.file}}"
+  ecfg-lsp: "{{source.asset.file}}"
 
 neovim:
   lspconfig: ecfg
