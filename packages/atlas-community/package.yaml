@@ -13,7 +13,7 @@ categories:
 
 source:
   # renovate:datasource=github-releases
-  id: pkg:generic/ariga:atlas@1.1.0
+  id: pkg:generic/ariga:atlas@1.2.0
   download:
     - target: win_x64
       files:
