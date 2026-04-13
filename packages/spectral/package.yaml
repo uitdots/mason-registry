@@ -12,7 +12,7 @@ categories:
   - Linter
 
 source:
-  id: pkg:npm/@stoplight/spectral-cli@6.15.0
+  id: pkg:npm/@stoplight/spectral-cli@6.15.1
 
 bin:
   spectral: npm:spectral
