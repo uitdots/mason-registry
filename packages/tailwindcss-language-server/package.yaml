@@ -1,0 +1,27 @@
+---
+# yaml-language-server: $schema=https://github.com/mason-org/registry-schema/releases/latest/download/package.schema.json
+name: tailwindcss-language-server
+description: |
+  Language Server Protocol implementation for Tailwind CSS.
+  This is a modified version from mason registry, which includes css-language-server.
+  The css-language-server should be enabled yourself, not automatically enabled by mason nvim lspconfig. And you should disable vscode-css-language-server while using this.
+homepage: https://github.com/tailwindlabs/tailwindcss-intellisense
+licenses:
+  - MIT
+languages:
+  - CSS
+categories:
+  - LSP
+
+source:
+  id: pkg:npm/%40tailwindcss/language-server@0.14.29
+
+schemas:
+  lsp: https://raw.githubusercontent.com/tailwindlabs/tailwindcss-intellisense/v{{version}}/packages/vscode-tailwindcss/package.json
+
+bin:
+  tailwindcss-language-server: npm:tailwindcss-language-server
+  css-language-server: npm:css-language-server
+
+neovim:
+  lspconfig: tailwindcss
