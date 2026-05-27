@@ -13,7 +13,7 @@ categories:
   - Runtime
 
 source:
-  id: pkg:github/plantuml/plantuml@v1.2026.4
+  id: pkg:github/plantuml/plantuml@v1.2026.5
   asset:
     file: plantuml.jar
 
