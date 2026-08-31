@@ -11,7 +11,7 @@ categories:
   - LSP
 
 source:
-  id: pkg:openvsx/Redocly/openapi-vs-code@0.14.8
+  id: pkg:openvsx/Redocly/openapi-vs-code@0.14.9
   download:
     file: Redocly.openapi-vs-code-{{version}}.vsix
 
